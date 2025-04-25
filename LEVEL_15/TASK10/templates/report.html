@@ -1,0 +1,20 @@
+<h2>Live Report</h2>
+<table border="1">
+  <tr>
+    <th>Invoice No</th>
+    <th>Date</th>
+    <th>Customer</th>
+    <th>Product</th>
+    <th>Quantity</th>
+  </tr>
+  {% for row in records %}
+  <tr>
+    <td>{{ row.invoice_no }}</td>
+    <td>{{ row.invoice_date }}</td>
+    <td>{{ row.customer_id }}</td>  <!-- or row.customer_name if added -->
+    <td>{{ row.product_id }}</td>
+    <td>{{ row.quantity }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('input_page') }}">Add New Order</a>
